@@ -1,0 +1,2 @@
+abundances	plugins/DESeq/example/counts.csv
+groups	plugins/DESeq/example/categories.csv

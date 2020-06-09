@@ -1,0 +1,2 @@
+Prefix plugins/DESeq/example
+Plugin DESeq inputfile parameters.txt outputfile stats.csv
