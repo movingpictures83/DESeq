@@ -1,4 +1,7 @@
-# DESeq
+# Language: R
+# Input: TXT (keyword-value pairs)
+# Output: CSV (statistics on each gene)
+# Tested with: PluMA 1.0, R 4.0
 
 PluMA plugin to compare two sets of samples and discover the most distiniguishing genes, computed using Differential Gene Expression Analysis Based on the Negative Binomial Distribution (Love et al, 2014).
 
