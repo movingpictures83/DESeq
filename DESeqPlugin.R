@@ -1,10 +1,21 @@
+dyn.load(paste("RPluMA", .Platform$dynlib.ext, sep=""))
+source("RPluMA.R")
+
+
 library(DESeq2)
 input <- function(inputfile) {
+  pfix = prefix()
+  if (length(pfix) != 0) {
+     pfix <- paste(pfix, "/", sep="")
+  }
    parameters <<- read.table(inputfile, as.is=T);
   rownames(parameters) <<- parameters[,1];
-  cnts <<- as.matrix(read.csv(toString(parameters["abundances",2])))
-  cond <<- as.vector(read.csv(toString(parameters["groups",2])))
+  cnts <<- as.matrix(read.csv(paste(pfix, toString(parameters["abundances",2]), sep="")))
+  cond <<- as.vector(read.csv(paste(pfix, toString(parameters["groups",2]), sep="")))
   cnts <<- cnts[,-1]
+  cnts <<- apply(cnts, 1, as.numeric);
+  print(ncol(cnts))
+  print(nrow(cond))
   cond <<- factor(cond[,-1])
 }
 
