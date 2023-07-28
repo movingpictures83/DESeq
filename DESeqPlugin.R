@@ -14,8 +14,6 @@ input <- function(inputfile) {
   cond <<- as.vector(read.csv(paste(pfix, toString(parameters["groups",2]), sep="")))
   cnts <<- cnts[,-1]
   cnts <<- apply(cnts, 1, as.numeric);
-  print(ncol(cnts))
-  print(nrow(cond))
   cond <<- factor(cond[,-1])
 }
 
